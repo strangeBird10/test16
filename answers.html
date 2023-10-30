@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/answers.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo.png" alt="logo">
+        </div>
+    </div>
+</header>
+
+<section class="answers">
+    <div class="container">
+        <div class="answer-tags">
+            <div class="answer-tags-past">
+                <span>Результат прохождения теста</span>
+                <img src="images/arrow-grey.png" alt="arrow">
+            </div>
+            <div class="answer-tags-current" id="name-test">
+                Тест №1. “JavaScript: Начальный уровень”
+            </div>
+        </div>
+        <h1 class="answer-title big-title">
+            Правильные ответы <span>к тесту</span>
+        </h1>
+        <div class="answers-items" >
+            <div class="answers-item" id="answers-item">
+                <div class="name-question" id="question-title"><span>Вопрос 1:</span> Тут должен быть текст вопроса?</div>
+                <div class="answers-various">
+                    <div class="answer-various">
+                        <input type="radio" name="answer" id="answer-1">
+                        <label for="answer-1">Вариант ответа 1</label>
+                    </div>
+                    <div class="answer-various correct">
+                        <input type="radio" name="answer" id="answer-2" >
+                        <label for="answer-2">Вариант ответа 2</label>
+                    </div>
+                    <div class="answer-various incorrect">
+                        <input type="radio" name="answer" id="answer-3" >
+                        <label for="answer-3">Вариант ответа 3</label>
+                    </div>
+                    <div class="answer-various">
+                        <input type="radio" name="answer" id="answer-4">
+                        <label for="answer-4">Вариант ответа 4</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="back-result" id="back-result">
+            <a href="#">Обратно к моему результату теста</a>
+            <img src="images/arrow-answer.png" alt="arrow-answer">
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    «АйтилогияQuiz» © Все права защищены / 2022
+</footer>
+<script src="scripts/common.js"></script>
+<script src="scripts/answers.js"></script>
+</body>
+</html>
