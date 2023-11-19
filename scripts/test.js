@@ -219,7 +219,7 @@
                     location.href = 'index.html'
                 }
                 if (result) {
-                    location.href = 'result.html?score=' + result.score + '&total=' + result.total;
+                    location.href = 'result.html'+ location.search + '&score=' + result.score + '&total=' + result.total;
                 }
 
             } else {

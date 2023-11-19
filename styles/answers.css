@@ -5,7 +5,7 @@
 
 .answer-tags {
     display: flex;
-    margin-bottom: 60px;
+
 }
 
 .answer-tags-past {
@@ -31,14 +31,14 @@
     font-size: 36px;
     line-height: 43px;
     color: #333333;
+    margin-bottom: 20px;
+    margin-top: 60px;
 }
 .name-question span {
     color: #6933DC;
 }
-.answers-various {
-    margin-top: 40px;
-}
-.answer-various {
+
+.answers-option {
     margin-top: 20px;
     font-size: 20px;
     line-height: 24px;
@@ -99,4 +99,17 @@ input[type="radio"]:checked::before {
     font-size: 17px;
     line-height: 20px;
     margin-right: 13px;
+}
+.name-user {
+    font-family: 'Museo Sans Cyrl Bold', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+
+}
+.name-user span {
+    color: #6933DC;
+}
+.answer-title {
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
