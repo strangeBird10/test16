@@ -219,6 +219,8 @@
                     location.href = 'index.html'
                 }
                 if (result) {
+                    const userAnswers = this.userResult.map(item => item.chosenAnswerId)
+                    sessionStorage.setItem('userAnswers', JSON.stringify(userAnswers));
                     location.href = 'result.html'+ location.search + '&score=' + result.score + '&total=' + result.total;
                 }
 

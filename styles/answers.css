@@ -57,8 +57,9 @@ input[type="radio"] {
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    border: 3px solid #6933DC;
     border-radius: 50%;
+    border: 3px solid #6933DC;
+    box-shadow: inset 10px 10px white;
     margin:0 13px 0 0;
     transform: translateY(2px);
 
@@ -71,7 +72,7 @@ input[type="radio"] {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    box-shadow: inset 10px 10px #5FDC33;
+    border: 5px solid #5FDC33;
     transition: .2s ease transform;
     transform: scale(0);
 }
@@ -80,7 +81,7 @@ input[type="radio"] {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    box-shadow: inset 10px 10px #DC3333;
+    border: 5px solid #DC3333;
     transition: .2s ease transform;
     transform: scale(0);
 }
