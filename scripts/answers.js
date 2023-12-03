@@ -3,39 +3,36 @@
         testId: null,
         nameTest: null,
         userInfo: null,
-        name: null,
-        lastName: null,
-        email: null,
         currentQuestionIndex: 1,
         testQuestions: [],
         quiz: null,
         correctAnswers: [],
         userAnswers: [],
         init() {
-            const userAnswersJSON = sessionStorage.getItem('userAnswers');
-            this.userAnswers = JSON.parse(userAnswersJSON) || [];
-
+            this.getUserAnswers();
             const url = new URL(location.href);
             this.testId = url.searchParams.get('id');
-            this.name = url.searchParams.get('name');
-            this.lastName = url.searchParams.get('lastName');
-            this.email = url.searchParams.get('email');
-
             if (this.testId) {
-                this.quiz = this.getData(this.testId, 'https://testologia.site/get-quiz?id=');
-                this.correctAnswers = this.getData(this.testId, 'https://testologia.site/get-quiz-right?id=');
-
+                this.getQuiz(this.testId);
+                this.getCorrectAnswers(this.testId);
                 this.startGoAnswer();
             } else {
                 location.href = 'index.html';
             }
         },
+        getUserAnswers() {
+            const userAnswersJSON = sessionStorage.getItem('userAnswers');
+            this.userAnswers = JSON.parse(userAnswersJSON) || [];
+
+        },
         startGoAnswer() {
+            const url = new URL(location.href);
+            const {name, lastName, email} = url.searchParams;
             const nameTest = document.getElementById('name-test');
             nameTest.innerText = this.quiz.name;
 
             const userInfo = document.getElementById('name-user');
-            userInfo.innerText = `${this.name} ${this.lastName}, ${this.email}`;
+            userInfo.innerText = `${name} ${lastName}, ${email}`;
             this.showAnswer();
         },
         showAnswer() {
@@ -85,9 +82,17 @@
                 });
             }
         },
-        getData(testId, url) {
+        getQuiz() {
+            const url = 'https://testologia.site/get-quiz?id=' + this.testId;
+            this.quiz = this.getData(url);
+        },
+        getCorrectAnswers() {
+            const url = 'https://testologia.site/get-quiz-right?id=' + this.testId;
+            this.correctAnswers = this.getData(url);
+        },
+        getData(url, method = 'GET') {
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', url + testId, false);
+            xhr.open(method, url, false);
             xhr.send();
 
             if (xhr.status === 200 && xhr.responseText) {
